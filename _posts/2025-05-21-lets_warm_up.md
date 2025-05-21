@@ -1,6 +1,6 @@
 ---
 title: TITLE
-date: 2025-05-21 10:35:00 -7
+date: 2025-05-21 10:35:00 -0700
 categories: [picoCTF, General Skills]
 tags: [basic]     # TAG names should always be lowercase
 ---
