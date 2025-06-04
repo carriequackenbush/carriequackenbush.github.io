@@ -52,4 +52,4 @@ for char in flag:
 # 125
 ```
 
-There were probably many and smarter ways to do this, but I just took the numbers and put them into [DCode](https://www.dcode.fr/ascii-code) which revealed the flag.
+There are plenty of ways to do this, but I just took the numbers and put them into [DCode](https://www.dcode.fr/ascii-code) which revealed the flag.
