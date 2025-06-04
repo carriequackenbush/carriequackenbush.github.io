@@ -1,7 +1,7 @@
 ---
 title: Lets Warm Up
 date: 2025-05-20 10:35:00 -0700
-categories: [picoCTF, General Skills]
+categories: [picoCTF]
 tags: [basic]     # TAG names should always be lowercase
 ---
 
