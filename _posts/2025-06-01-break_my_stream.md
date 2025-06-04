@@ -54,9 +54,9 @@ if __name__ == "__main__":
 
 This challenge had a server to connect to that was running this program. The only difference is that the flag variable was obviously not b"XXX" as it gave a much longer response. 
 
-I worked with ChatGPT to get a python script, and it actually took much longer than it should have. I didn't want the script to connect to the server, so I asked for the script to allow me to just put in the flag string manually. 
+I worked with ChatGPT to get a python script for this one. I didn't want the script to connect to the server, so I asked for the script to allow for a manually entered string. 
 
-What follows is the script it gave me and the information I need to call it:
+What follows is the script it gave me and the information I needed to call it:
 
 ```python
 #!/usr/bin/env python3
