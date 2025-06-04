@@ -1,6 +1,6 @@
 ---
 title: The Emperor
-date: 2025-06-02 10:35:00 -0700
+date: 2025-06-01 10:35:00 -0700
 categories: [N0PSctf, General Skills]
 tags: [basic]     # TAG names should always be lowercase
 ---
