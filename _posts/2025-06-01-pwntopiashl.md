@@ -79,3 +79,7 @@ It asked where I wanted to go next and I chose to check for obfuscation.
 It did not find any obfuscation, stripping, or packing. 
 
 Next it offered to disassemble or decompile it, and I didn't expect much as it always says it doesn't have access to gdb or Ghidra.
+
+It honed in on icmp_packet_listener and wanted to go deeper into it.
+
+2. I presented the pcap file to ChatGPT.
