@@ -77,3 +77,5 @@ ChatGPT read the magic bytes and confirmed that it was a 64-bit ELF binary.
 It asked where I wanted to go next and I chose to check for obfuscation. 
 
 It did not find any obfuscation, stripping, or packing. 
+
+Next it offered to disassemble or decompile it, and I didn't expect much as it always says it doesn't have access to gdb or Ghidra.
