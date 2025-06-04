@@ -54,9 +54,9 @@ if __name__ == "__main__":
 
 This challenge had a server to connect to that was running this program. The only difference is that the flag variable was obviously not b"XXX" as it gave a much longer response. 
 
-I worked with ChatGPT to get a python script for this one. I didn't want the script to connect to the server, so I asked for the script to allow for a manually entered string. 
+I worked with ChatGPT to get a python script for this one. I didn't want the script to connect to the server, so I asked for the script to allow for a manually entered string. It seems my ChatGPT is overly complicating things. I think there is also a chance that my ChatGPT is avoiding using pwntools due to a previous incident.
 
-What follows is the script it gave me and the information I needed to call it:
+What follows is the script and the information needed to call it:
 
 ```python
 #!/usr/bin/env python3
@@ -136,3 +136,35 @@ python3 decrypt_flag.py \
   --prefix N0PS{
 ```
 
+Here are some other scripts that accomplished the same thing:
+
+```python
+from pwn import *
+
+def xor(a, b):
+    return bytes([x ^ y for x, y in zip(a, b)])
+
+conn = remote("0.cloud.chals.io", 31561)
+
+# Read intro and get encrypted flag
+line = conn.recvuntil(b"thing: ")
+flag_ct_hex = conn.recvline().strip()
+flag_ct = bytes.fromhex(flag_ct_hex.decode())
+print("[+] Got encrypted flag:", flag_ct.hex())
+
+# Send known plaintext of same length
+known_pt = b'A' * len(flag_ct)
+conn.sendlineafter(b"Enter your message: ", known_pt)
+
+# Receive encrypted known plaintext
+known_ct_hex = conn.recvline().strip()
+known_ct = bytes.fromhex(known_ct_hex.decode())
+print("[+] Got encrypted known plaintext:", known_ct.hex())
+
+# Recover keystream
+keystream = xor(known_ct, known_pt)
+
+# Decrypt the flag
+flag = xor(flag_ct, keystream)
+print("[+] Recovered flag:", flag.decode())
+```
