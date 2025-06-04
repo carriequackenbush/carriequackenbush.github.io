@@ -71,4 +71,4 @@ As this was a fail, I'm going to do a little necropsy to see what went wrong and
 > The first misstep happened immediately as I didn't switch from o4 to o4-mini or o4-mini-high. 
 
 1. Presented the binary to ChatGPT and asked if it could tell what the file was doing. ChatGPT read the magic bytes and confirmed that it was a 64-bit ELF binary.It asked where I wanted to go next and I chose to check for obfuscation. It did not find any obfuscation, stripping, or packing. Next it offered to disassemble or decompile it, and I didn't expect much as it always says it doesn't have access to gdb or Ghidra. It honed in on icmp_packet_listener and wanted to go deeper into it.
-2. Presented the pcap file to ChatGPT.
+2. Presented the pcap file to ChatGPT. It confirmed through magic bytes that it was a valid pcap file and then immediately stated that it didn't have access to pyshark, scapy, or tshark.
