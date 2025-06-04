@@ -15,4 +15,4 @@ UVGEFPQOAPQPMOMQEMDOUBTQDITUOTYMWQEYQMBDARQEEUAZMXODKBFATQDA
 
 [DCode's cipher identifier](https://www.dcode.fr/cipher-identifier) identified this as a ROT cipher, and choosing that decrypted the whole thing.
 
-[CyberChef](https://cyberchef.org/#recipe=ROT13(true,true,false,14)&input=RWEsIGthZyBwcW9hcHFwIHVmIHRndD8KRnRxeiwgdHFkcSB1ZSBmdHEgcnhtczoKVVZHRUZQUU9BUFFQTU9NUUVNRE9VQlRRRElUVU9UWU1XUUVZUU1CREFSUUVFVUFaTVhPREtCRkFUUURB) solved it as well, after changing the amount. 
+[CyberChef](https://cyberchef.org/#recipe=ROT13(true,true,false,14)&input=RWEsIGthZyBwcW9hcHFwIHVmIHRndD8KRnRxeiwgdHFkcSB1ZSBmdHEgcnhtczoKVVZHRUZQUU9BUFFQTU9NUUVNRE9VQlRRRElUVU9UWU1XUUVZUU1CREFSUUVFVUFaTVhPREtCRkFUUURB) solved it as well, after changing the amount of ROT. 
