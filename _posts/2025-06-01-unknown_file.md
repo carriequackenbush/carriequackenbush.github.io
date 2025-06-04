@@ -4,7 +4,7 @@ date: 2025-06-01 10:36:00 -0700
 categories: [N0PSctf]
 tags: [basic, forensics]     # TAG names should always be lowercase
 ---
-
+![N0PSctf Logo](/assets/img/logo-nopsctf.png){: .right }
 > Hello young trainees! Today, we are studying digital forensics! This may be useful if one day you have to face PwnTopia... Here is a file, you have to find a way to read its content. Good luck!
 
 ![First part of the extensionless file as code](/assets/img/2025-06-01-unknown_file.png)
