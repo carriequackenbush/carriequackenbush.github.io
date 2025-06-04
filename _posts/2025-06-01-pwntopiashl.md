@@ -1,5 +1,5 @@
 ---
-title: pwntopiashl
+title: pwntopiashl (Fail)
 date: 2025-06-01 10:39:00 -0700
 categories: [N0PSctf]
 tags: [reverse_engineering, re, fail]     # TAG names should always be lowercase
@@ -9,7 +9,7 @@ tags: [reverse_engineering, re, fail]     # TAG names should always be lowercase
 
 We were given an elf binary and a pcap that had captured traffic from the binary. ChatGPT and I went round and round for days, right up to the last minute, and just didn't get it.
 
-The solution was simple and elegant:
+The solution was 'simple' and elegant:
 
 ```python
 import struct
