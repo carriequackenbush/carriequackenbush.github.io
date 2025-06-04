@@ -6,6 +6,7 @@ tags: [basic, re, reverse, engineering]     # TAG names should always be lowerca
 ---
 
 > Look who's there! New students! Fine, this time we will focus on reverse engineering. This could help you against PwnTopia one day! I give you now a Python program and its output. Try to understand how it works!
+
 ```
 from flag import flag
 
@@ -50,4 +51,5 @@ for char in flag:
 # 33
 # 125
 ```
+
 There were probably many and smarter ways to do this, but I just took the numbers and put them into [DCode](https://www.dcode.fr/ascii-code) which revealed the flag.
