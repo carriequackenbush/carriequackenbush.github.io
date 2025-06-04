@@ -2,7 +2,7 @@
 title: Obedient Cat
 date: 2025-05-20 13:17:00 -0700
 categories: [picoCTF]
-tags: [basic]     # TAG names should always be lowercase
+tags: [basic, general]     # TAG names should always be lowercase
 ---
 
 > This file has a flag in plain sight (aka "in-the-clear").
