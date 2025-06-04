@@ -63,12 +63,17 @@ if __name__ == "__main__":
 
 >The gist is that C2 traffic is hidden inside ICMP packets. The checksum fields are (mis)used to establish a secret symmetric XOR key between server and client (2 bytes each, plus some derived values you can find in the Python script). Then data is sent in the "data" field of the ICMP packet.
 
->All you need to do is go through the packets, decrypt them, and in the final plaintext will be your flag. Make sure you update the key whenever new keys are exchanged between client and server in the PCAP.
+>All you need to do is go through the packets, decrypt them, and in the final plaintext will be your flag. Make sure you update the key whenever new keys are exchanged between client and server in the PCAP. - wallaby
 
-As this was a fail, I'm going to do this post a little differently and do a necropsy to see what went wrong and what could be improved going forward.
+As this was a fail, I'm going to do a little necropsy to see what went wrong and what could be improved going forward.
+
+> [!WARNING]
+> The first misstep happened immediately as I didn't switch from o4 to o4-mini or o4-mini-high. 
 
 1. I presented the binary to ChatGPT and asked if it could tell what the file was doing.
 
 ChatGPT read the magic bytes and confirmed that it was a 64-bit ELF binary. 
 
 It asked where I wanted to go next and I chose to check for obfuscation. 
+
+It did not find any obfuscation, stripping, or packing. 
