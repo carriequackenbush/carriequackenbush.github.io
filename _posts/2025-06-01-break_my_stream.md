@@ -2,7 +2,7 @@
 title: Break My Stream
 date: 2025-06-01 10:38:00 -0700
 categories: [N0PSctf]
-tags: [cryptography]     # TAG names should always be lowercase
+tags: [cryptography, remote, port, web]     # TAG names should always be lowercase
 ---
 
 > CrypTopia is testing their next gen encryption algorithm. We believe that the way they implemented it may have a flaw...
