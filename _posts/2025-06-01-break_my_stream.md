@@ -5,6 +5,7 @@ categories: [N0PSctf]
 tags: [cryptography, remote, port, web]     # TAG names should always be lowercase
 ---
 ![N0PSctf Logo](/assets/img/logo-nopsctf.png){: .right }
+
 > CrypTopia is testing their next gen encryption algorithm. We believe that the way they implemented it may have a flaw...
 
 ```python
