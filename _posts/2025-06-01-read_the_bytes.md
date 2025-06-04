@@ -4,7 +4,7 @@ date: 2025-06-01 10:37:00 -0700
 categories: [N0PSctf]
 tags: [basic, re, reverse_engineering]     # TAG names should always be lowercase
 ---
-
+![N0PSctf Logo](/assets/img/logo-nopsctf.png){: .right }
 > Look who's there! New students! Fine, this time we will focus on reverse engineering. This could help you against PwnTopia one day! I give you now a Python program and its output. Try to understand how it works!
 
 ```python
