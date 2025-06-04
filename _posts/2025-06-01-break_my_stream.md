@@ -168,3 +168,132 @@ keystream = xor(known_ct, known_pt)
 flag = xor(flag_ct, keystream)
 print("[+] Recovered flag:", flag.decode())
 ```
+
+```python
+import socket
+import re
+import sys
+HOST = "0.cloud.chals.io"
+PORT = 31561
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+try:
+    print(f"Connecting to {HOST}:{PORT}...")
+    sock.connect((HOST, PORT))
+    print("Connected.")
+    # Receive welcome message and encrypted flag
+    initial_data = b""
+    while True:
+        chunk = sock.recv(4096)
+        if not chunk:
+            print("Connection closed unexpectedly while reading initial data.", file=sys.stderr)
+            sock.close()
+            exit(1)
+        initial_data += chunk
+        # Wait until the prompt is fully received
+        if b"Enter your message: " in initial_data:
+            break
+            
+    initial_data_str = initial_data.decode(errors='ignore') # Fixed syntax error
+    print("Received initial data:")
+    print(initial_data_str)
+    # Extract encrypted flag hex
+    match_ef = re.search(r"Oh, one last thing: ([0-9a-f]+)", initial_data_str)
+    if not match_ef:
+        print("Could not find encrypted flag hex.", file=sys.stderr)
+        sock.close()
+        exit(1)
+    encrypted_flag_hex = match_ef.group(1)
+    print(f"Encrypted Flag HEX: {encrypted_flag_hex}")
+    # Calculate flag length
+    try:
+        ef_bytes = bytes.fromhex(encrypted_flag_hex)
+        flag_len = len(ef_bytes)
+        print(f"Flag length: {flag_len}")
+    except ValueError:
+        print("Invalid hex string for encrypted flag.", file=sys.stderr)
+        sock.close()
+        exit(1)
+    # Prepare message: Send 'A' repeated flag_len times.
+    # The server reads this string and encodes it using .encode()
+    message_payload_str = 'A' * flag_len
+    message_payload_bytes = message_payload_str.encode("ascii") # This is what gets encrypted
+    print(f"Sending message payload (string): {message_payload_str}")
+    # Send message payload + newline
+    sock.sendall((message_payload_str + '\n').encode())
+    # Receive encrypted message hex
+    response_data = b""
+    while True: # Read until the prompt appears again
+        try:
+            sock.settimeout(10.0) # Increased timeout
+            chunk = sock.recv(4096)
+            if not chunk:
+                print("Connection closed while waiting for response.", file=sys.stderr)
+                break
+            response_data += chunk
+            # Check if the prompt is at the end of the accumulated data
+            if response_data.strip().endswith(b"Enter your message:"):
+                print("Detected prompt, stopping read.")
+                break
+        except socket.timeout:
+            print("Socket timeout waiting for response/prompt.", file=sys.stderr)
+            # Check if we received anything useful before timeout
+            if response_data:
+                print("Proceeding with received data despite timeout.")
+                break
+            else:
+                print("No data received before timeout.", file=sys.stderr)
+                sock.close()
+                exit(1)
+        except Exception as e:
+            print(f"Error receiving data: {e}", file=sys.stderr)
+            sock.close()
+            exit(1)
+            
+    sock.settimeout(None) # Disable timeout
+    response_str = response_data.decode(errors='ignore') # Fixed syntax error
+    print(f"Raw response data: {repr(response_str)}")
+    # Extract hex using regex, looking for a hex string of the correct length
+    # The hex string should appear before the *next* "Enter your message:" prompt
+    expected_hex_len = flag_len * 2
+    # Regex to capture hex ending just before the prompt, allowing for optional whitespace
+    match_em = re.search(r"([0-9a-f]{" + str(expected_hex_len) + r"})\s*Enter your message:", response_str)
+    
+    if not match_em:
+         # Fallback: search anywhere if not found immediately before prompt
+         print("Primary regex failed, trying fallback regex...")
+         match_em = re.search(r"([0-9a-f]{" + str(expected_hex_len) + r"})", response_str)
+    if not match_em:
+        print(f"Could not find encrypted message hex of length {expected_hex_len} in response.", file=sys.stderr)
+        print(f"Raw response was: {repr(response_str)}", file=sys.stderr)
+        sock.close()
+        exit(1)
+    encrypted_message_hex = match_em.group(1)
+    print(f"Extracted Encrypted Message HEX: {encrypted_message_hex}")
+    # Calculate the flag: F = EF XOR EM XOR P
+    try:
+        em_bytes = bytes.fromhex(encrypted_message_hex)
+        if len(em_bytes) != flag_len:
+            print(f"Error: Encrypted message length ({len(em_bytes)}) does not match flag length ({flag_len}).", file=sys.stderr)
+            sock.close()
+            exit(1)
+        # XOR all three components: EncryptedFlag, EncryptedMessage, PlaintextMessage
+        flag_bytes = bytes(ef ^ em ^ pm for ef, em, pm in zip(ef_bytes, em_bytes, message_payload_bytes))
+        try:
+            flag = flag_bytes.decode()
+            print(f"\nRecovered Flag: {flag}")
+            # Basic validation
+            if flag.startswith("flag{") and flag.endswith("}"):
+                print("Flag format looks valid!")
+            else:
+                print("Warning: Flag format might be incorrect.")
+        except UnicodeDecodeError:
+            print(f"\nCould not decode flag bytes: {flag_bytes.hex()}", file=sys.stderr)
+            print("The result might be binary data or incorrectly decrypted.", file=sys.stderr)
+    except ValueError as e:
+        print(f"Invalid hex string for encrypted message: {e}", file=sys.stderr)
+        sock.close()
+        exit(1)
+finally:
+    print("Closing connection.")
+    sock.close()
+```
