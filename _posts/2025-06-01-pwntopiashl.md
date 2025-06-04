@@ -7,7 +7,7 @@ tags: [reverse_engineering, re, fail]     # TAG names should always be lowercase
 
 > N0PStopia has been attacked by PwnTopia! They installed a stealthy binary on one of our servers, but we did not understand what it does! Can you help? We saw some weird ICMP traffic during the attack, you can find attached a capture file.
 
-We were given an elf binary and a pcap that had captured traffic from the binary. ChatGPT and I went round and round for days, right up to the last minute, and I just didn't get it.
+We were given an elf binary and a pcap that had captured traffic from the binary. ChatGPT and I went round and round for days, right up to the last minute, and just didn't get it.
 
 The solution was simple and elegant:
 
