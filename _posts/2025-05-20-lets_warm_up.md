@@ -2,7 +2,7 @@
 title: Lets Warm Up
 date: 2025-05-20 10:35:00 -0700
 categories: [picoCTF]
-tags: [basic]     # TAG names should always be lowercase
+tags: [basic, general]     # TAG names should always be lowercase
 ---
 
 > If I told you a word started with 0x70 in hexadecimal, what would it start with in ASCII? 
