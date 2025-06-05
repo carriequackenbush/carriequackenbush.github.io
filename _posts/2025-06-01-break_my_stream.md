@@ -3,8 +3,6 @@ title: Break My Stream
 date: 2025-06-01 10:38:00 -0700
 categories: [N0PSctf]
 tags: [cryptography, remote, port, web]     # TAG names should always be lowercase
-image:
-  path: /assets/img/logo-nopsctf.png
 ---
 ![N0PSctf Logo](/assets/img/logo-nopsctf.png){: .right }
 
