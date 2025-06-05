@@ -13,3 +13,9 @@ Here is what I have been up to:
 + 2024 Spring: Finished Associate of Applied Sciences: Computer Support Specialist
 + 2023 Jun: Started working as an Internet Analyst
 + 2022 Oct: Competed in the NCL
++ 2022 Fall: Declared AAS-Computer Support Specialist as 2nd major
++ 2022 May: Completed Associate of Arts: Liberal Arts
++ 2022 Apr: Competed in the NCL
++ 2020 Summer Declared AAS-Information Technology-Networking as 2nd major
++ 2020 May: Moved to Arizona
++ 2020 Jan: Went back to school for AA of Liberal Arts
