@@ -4,7 +4,7 @@ date: 2025-06-01 10:38:00 -0700
 categories: [N0PSctf]
 tags: [cryptography, remote, port, web]     # TAG names should always be lowercase
 image:
-  lqip: /assets/img/logo-nopsctf.png
+  lqip: /assets/img/logo-nopsctf-bib.png
 ---
 ![N0PSctf Logo](/assets/img/logo-nopsctf.png){: .right }
 
