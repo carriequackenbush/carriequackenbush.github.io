@@ -8,6 +8,7 @@ order: 4
 
 Here is what I have been up to:
 + 2025 May 31 to Jun 01: N0PSctf [https://ctftime.org/event/2486](https://ctftime.org/event/2486)
++ 2025 May 23 to May 25: NahamCon [https://ctftime.org/event/2782](https://ctftime.org/event/2782)
 + 2024 Fall: Began working towards a BAS in IT
 + 2024 Spring: Finished Associate of Applied Sciences: Information Technology - Networking
 + 2024 Spring: Finished Associate of Applied Sciences: Computer Support Specialist
