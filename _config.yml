@@ -153,7 +153,7 @@ pwa:
 paginate: 10
 
 # The base URL of your site
-baseurl: "https://carriequackenbush.com"
+baseurl: "http://carriequackenbush.com"
 
 # ------------ The following options are not recommended to be modified ------------------
 
