@@ -4,7 +4,7 @@ date: 2025-06-19 10:36:01 -0700
 categories: [USCyber]
 tags: [ctf, forensics, basic]     # TAG names should always be lowercase
 ---
-#![US Cyber Games Logo](/assets/img/logo-uscybergames.png){: .right }
+![US Cyber Games Logo](/assets/img/logo-uscybergames.png){: .right }
 
 There was no description to this, just a wav file. Listening to the wav file made clear that it was Morse code, which I first transcribed by hand and then confirmed with a wav to Morse website converter. 
 
