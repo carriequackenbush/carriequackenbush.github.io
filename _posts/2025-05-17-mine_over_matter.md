@@ -1,6 +1,6 @@
 ---
 title: Mine Over Matter
-date: 2025-05-17 10:37:00 -0700
+date: 2025-05-17 10:37:02 -0700
 categories: [BYUCTF]
 tags: [basic, forensics]     # TAG names should always be lowercase
 ---
