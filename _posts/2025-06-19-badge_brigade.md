@@ -8,6 +8,6 @@ tags: [ctf, forensics, basic]     # TAG names should always be lowercase
 
 > Our analysts flagged this Roblox experience as possibly being used to pass information in plain sight. Thousands of badges are lined up with no obvious purpose. Think you can find what’s hidden beneath the noise? https://www.roblox.com/games/85918733347543/SVBGR-Badge-Brigade
 
-<div align="center"><img src="/assets/img/uscybergames-badge_brigade.png"/></div>
+<div align="center"><img src="/assets/img/uscybergames-badge_brigade.png" alt="Screenshot of the US Cyber Game Roblox experiens"/></div>
 
 If you could solve this game by playing it, I couldn't find it. It turns out you can edit experiences in Roblox Studio, as can be seen in the top right of the above screenshot. Playing with the luau code eventually revealed the flag.
