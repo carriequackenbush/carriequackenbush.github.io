@@ -2,7 +2,7 @@
 title: Are You Looking Me Up?
 date: 2025-05-17 10:36:00 -0700
 categories: [BYUCTF]
-tags: [basic, osint]     # TAG names should always be lowercase
+tags: [basic, forensics]     # TAG names should always be lowercase
 ---
 ![byuctf Logo](/assets/img/logo-byuctf.png){: .right }
 > The network has a DNS server that's been receiving a lot of traffic. You've been handed a set of raw network logs. Your job? Hunt down the DNS server that has received the most DNS requests.
